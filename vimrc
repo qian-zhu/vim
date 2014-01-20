@@ -61,7 +61,6 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set smarttab
-set expandtab
 set shiftround 
 
 " Misc
@@ -141,9 +140,9 @@ let g:miniBufExplCycleArround=1
 
 " 默认方向键左右可以切换buffer
 nnoremap <TAB> :MBEbn<CR>
-noremap <leader>bn :MBEbn<CR>
-noremap <leader>bp :MBEbp<CR>
-noremap <leader>bd :MBEbd<CR>
+noremap <A-right> :MBEbn<CR>
+noremap <A-left> :MBEbp<CR>
+noremap <A-down> :MBEbd<CR>
 
 Bundle 'vim-scripts/taglist.vim'
 let Tlist_Process_File_Always = 1
@@ -260,6 +259,8 @@ highlight SpellLocal term=underline cterm=underline
 source ~/.vim/myvimrc/cscope/plugin/cscope_maps.vim
 source ~/.vim/myvimrc/fold/fold.vim
 source ~/.vim/myvimrc/misc/myvim.vim
+
+autocmd BufRead *.py : set expandtab
 
 if filereadable("vimrc.local")
   source vimrc.local
