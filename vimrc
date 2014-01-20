@@ -81,8 +81,11 @@ filetype on
 filetype indent on
 filetype plugin on
 filetype plugin indent on
-"set laststatus=2
+set laststatus=2
+
 "set statusline=%<%f%=%([%{Tlist_Get_Tagname_By_Line()}]%)
+set statusline=%<%f%=%([%{Tlist_Get_Tagname_By_Line()}]%)
+"set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
 "set title titlestring=%<%f\ %([%{Tlist_Get_Tagname_By_Line()}]%)
 
 "Smart indent
@@ -143,6 +146,10 @@ nnoremap <TAB> :MBEbn<CR>
 noremap <A-right> :MBEbn<CR>
 noremap <A-left> :MBEbp<CR>
 noremap <A-down> :MBEbd<CR>
+
+
+"Bundle 'Lokaltog/powerline'
+"let g:Powerline_symbols = 'unicode'
 
 Bundle 'vim-scripts/taglist.vim'
 let Tlist_Process_File_Always = 1
@@ -225,8 +232,8 @@ Bundle 'hdima/python-syntax'
 let python_highlight_all = 1
 
 " for golang
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'Blackrush/vim-gocode'
+"Bundle 'jnwhiteh/vim-golang'
+"Bundle 'Blackrush/vim-gocode'
 
 " for markdown
 Bundle 'plasticboy/vim-markdown'
