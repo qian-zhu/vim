@@ -81,12 +81,6 @@ filetype on
 filetype indent on
 filetype plugin on
 filetype plugin indent on
-set laststatus=2
-
-"set statusline=%<%f%=%([%{Tlist_Get_Tagname_By_Line()}]%)
-set statusline=%<%f%=%([%{Tlist_Get_Tagname_By_Line()}]%)
-"set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
-"set title titlestring=%<%f\ %([%{Tlist_Get_Tagname_By_Line()}]%)
 
 "Smart indent
 set smartindent
@@ -157,6 +151,8 @@ let Tlist_Show_One_File = 1            "不同时显示多个文件的tag，只�
 let Tlist_Exit_OnlyWindow = 1          "如果taglist窗口是最后一个窗口，则退出vim
 let Tlist_Use_Right_Window = 1         "在右侧窗口中显示taglist窗口
 nnoremap <silent> <F8> :TlistToggle<CR>
+set statusline=%<%f%=%([%{Tlist_Get_Tagname_By_Line()}]%)
+set laststatus=2
 
 
 Bundle 'kien/ctrlp.vim'
