@@ -249,6 +249,19 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'fs111/pydoc.vim'
 " K -- show manuall for current word or select sentence.
 
+
+"---------- HTML ---------------
+"Hightlist matching html
+Bundle 'gcmt/breeze.vim' 
+"Beautify your source code in Vim. javascript,css,html
+Bundle "maksimr/vim-jsbeautify"
+" Install nodejs at first
+"autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+" for html
+"autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+" for css or scss
+"autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+
 filetype plugin indent on
 
 "" for error highlight，防止错误整行标红导致看不清

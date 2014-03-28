@@ -93,6 +93,7 @@ augroup testgroup
     autocmd!
     "autocmd BufRead *.c,*.h :call Set_Cscope_database()
     autocmd BufRead *.c,*.h,*.inl :call LoadCscope()
-	autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+	autocmd CursorMoved *.c,*.h,*.py,*.js exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 augroup END
 
+runtime macros/matchit.vim
