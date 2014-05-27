@@ -137,9 +137,8 @@ let g:miniBufExplCycleArround=1
 
 " 默认方向键左右可以切换buffer
 nnoremap <TAB> :MBEbn<CR>
-noremap <A-right> :MBEbn<CR>
-noremap <A-left> :MBEbp<CR>
-noremap <A-down> :MBEbd<CR>
+nnoremap <S-TAB> :MBEbp<CR>
+nnoremap <A-down> :MBEbd<CR>
 
 
 "Bundle 'Lokaltog/powerline'
@@ -257,6 +256,12 @@ Bundle "maksimr/vim-jsbeautify"
 "autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 " for css or scss
 "autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+Bundle "othree/javascript-libraries-syntax.vim"
+autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
+autocmd BufReadPre *.js let b:javascript_lib_use_underscore = 1
+autocmd BufReadPre *.js let b:javascript_lib_use_backbone = 1
+autocmd BufReadPre *.js let b:javascript_lib_use_prelude = 0
+autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 0
 
 filetype plugin indent on
 
