@@ -223,8 +223,8 @@ highlight SyntasticErrorSign guifg=white guibg=black
 "################# 具体语言语法高亮 ###############
 
 " for python.vim syntax highlight
-Bundle 'hdima/python-syntax'
-let python_highlight_all = 1
+"Bundle 'hdima/python-syntax'
+"let python_highlight_all = 1
 
 " for golang
 "Bundle 'jnwhiteh/vim-golang'
@@ -241,10 +241,9 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'Raimondi/delimitMate'
 " insert matched ),",' ....
 
-Bundle 'fs111/pydoc.vim'
+"Bundle 'fs111/pydoc.vim'
 " K -- show manuall for current word or select sentence.
-
-
+nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "---------- HTML ---------------
 "Hightlist matching html
 Bundle 'gcmt/breeze.vim' 
@@ -280,8 +279,6 @@ highlight SpellLocal term=underline cterm=underline
 source ~/.vim/myvimrc/cscope/plugin/cscope_maps.vim
 source ~/.vim/myvimrc/fold/fold.vim
 source ~/.vim/myvimrc/misc/myvim.vim
-
-autocmd BufRead *.py : set expandtab
 
 if filereadable("vimrc.local")
   source vimrc.local

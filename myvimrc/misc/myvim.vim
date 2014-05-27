@@ -7,6 +7,17 @@ nnoremap <C-e>			:!p4 edit %:p<CR><CR>
 
 nnoremap <F7>			:exec '!python' shellescape(@%, 1)<cr>
 
+function! Get_file_perm()
+  let permission = getfperm(expand('%:p'))
+  if(permission[0] == 'r' && permission[1] == '-')
+	setlocal nomodifiable
+  else
+	setlocal modifiable
+  endif
+endfunction
+
+autocmd BufRead * : call Get_file_perm()
+
 let g:bbbb = 1
 function! Test()
 	if(g:bbbb == 1)
