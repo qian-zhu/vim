@@ -212,12 +212,20 @@ let g:syntastic_warning_symbol='>'
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_highlighting = 0
 "let g:syntastic_python_checker="flake8,pyflakes,pep8,pylint"
-"let g:syntastic_python_checkers=['pyflakes']
+let g:syntastic_python_checkers=['pyflakes']
+let g:syntastic_enable_python_checker = 1
+let g:syntastic_enable_javascript_checker = 1
+"sudo apt-get update
+"sudo apt-get install -y python-software-properties
+"sudo add-apt-repository ppa:chris-lea/node.js
+"sudo apt-get update
+"sudo apt-get install nodejs
+"sudo npm install -g jshint
 highlight SyntasticErrorSign guifg=white guibg=black
 
 " python fly check, 弥补syntastic只能打开和保存才检查语法的不足
-"Bundle 'kevinw/pyflakes-vim'
-"let g:pyflakes_use_quickfix = 0
+Bundle 'kevinw/pyflakes-vim'
+let g:pyflakes_use_quickfix = 0
 
 
 "################# 具体语言语法高亮 ###############
@@ -244,6 +252,13 @@ Bundle 'Raimondi/delimitMate'
 "Bundle 'fs111/pydoc.vim'
 " K -- show manuall for current word or select sentence.
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+" :help surround or https://github.com/tpope/vim-surround
+""Hello world!" --> cs"' 'Hello world!'
+" 'Hello world!' --> ds' -->Hello world!
+" ysiw] ---> [Hello] world!
+"
 "---------- HTML ---------------
 "Hightlist matching html
 Bundle 'gcmt/breeze.vim' 
