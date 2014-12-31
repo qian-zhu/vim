@@ -62,6 +62,8 @@ set shiftwidth=4
 set softtabstop=4
 set smarttab
 set shiftround 
+set ts=4
+set expandtab
 
 " Misc
 set autowrite       " Automatically save before commands like :next and :make
@@ -201,6 +203,10 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 0
 "Stop asking once per .ycm_extra_conf.py file if it is safe to be loaded
 let g:ycm_confirm_extra_conf = 0
 
+Bundle 'davidhalter/jedi-vim'
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+
 
 "################# 语法检查 ###############
 
@@ -297,5 +303,25 @@ source ~/.vim/myvimrc/misc/myvim.vim
 
 if filereadable("vimrc.local")
   source vimrc.local
+endif
+
+if has("cscope")
+    set csprg=/usr/bin/cscope
+    set csto=1
+    set cst
+    set csverb
+    set cspc=3
+    "add any database in current dir
+    if filereadable("cscope.out")
+        silent cs add cscope.out
+    "else search cscope.out elsewhere
+	else
+		let cscope_file=findfile("cscope.out", ".;")
+		let cscope_pre=matchstr(cscope_file, ".*/")
+		"echo cscope_file
+		if !empty(cscope_file) && filereadable(cscope_file)
+			silent exe "cs add" cscope_file cscope_pre
+		endif
+	endif
 endif
 
