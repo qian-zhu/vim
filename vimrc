@@ -260,6 +260,15 @@ Bundle 'Raimondi/delimitMate'
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
+
+
+" CSS and Less
+Bundle 'groenewege/vim-less'
+Bundle 'skammer/vim-css-color'
+Bundle 'hail2u/vim-css3-syntax'
+nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
+
+
 " :help surround or https://github.com/tpope/vim-surround
 ""Hello world!" --> cs"' 'Hello world!'
 " 'Hello world!' --> ds' -->Hello world!
